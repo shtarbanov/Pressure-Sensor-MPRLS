@@ -12,7 +12,13 @@ void setup() {
 }
 
 void loop() {
-  float pressure = mpr.getPressurePSI();
-  Serial.print("Pressure (ATM): "); Serial.println(pressure);
+  //TODO: Can you read the pressure at the 400MHz bus speed?  
+  float pPSI = mpr.getPressurePSI();
+  //delay(5); This is no longer necessary, b/c I fixed the library to check if status byte is busy!
+  float pATM = mpr.getPressureATM();
+  float pHPA = mpr.getPressureHPA();
+  Serial.print("Pressure (PSI): "); Serial.println(pPSI);
+  Serial.print("Pressure (ATM): "); Serial.println(pATM);
+  Serial.print("Pressure (HPA): "); Serial.println(pHPA);
   delay(1000);
 }
