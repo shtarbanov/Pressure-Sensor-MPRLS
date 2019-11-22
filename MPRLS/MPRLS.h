@@ -11,6 +11,7 @@ class MPRLS {
     uint8_t _addr = 0x18;
     TwoWire *_i2c;
     uint32_t getRawPressure(void);
+    uint8_t status;
 
   public:
     //Constructor
