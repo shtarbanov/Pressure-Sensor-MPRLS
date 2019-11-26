@@ -1,7 +1,8 @@
 MPRLS	KEYWORD1
 begin			KEYWORD2
-getRawPressure	KEYWORD2
+setPressureUnit	KEYWORD2
 getStatus		KEYWORD2
-getPressurePSI	KEYWORD2
-getPressureHPA	KEYWORD2
-getPressureATM	KEYWORD2
+getPressure		KEYWORD2
+HPA				KEYWORD4
+PSI				KEYWORD4
+ATM				KEYWORD4

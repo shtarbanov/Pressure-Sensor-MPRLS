@@ -15,12 +15,16 @@ bool MPRLS::begin(){
   else return false;
 }
 
+void MPRLS::setPressureUnit(unit pUnit){
+  _pressureUnit=pUnit;
+}
+
 uint8_t MPRLS::getStatus(void){
   _i2c->requestFrom(_addr, (uint8_t)1);
   return _i2c->read();
 }
 
-uint32_t MPRLS::getRawPressure(void){
+uint32_t MPRLS::_getRawPressure(void){
   //Request a new pressure reading to be performed.
   _i2c->beginTransmission(_addr);
   _i2c->write(0xAA);   // command to read pressure
@@ -62,12 +66,24 @@ uint32_t MPRLS::getRawPressure(void){
   return rawData;
 }
 
-float MPRLS::getPressureHPA(void){
-  return getPressurePSI() * 68.947572932;
+float MPRLS::getPressure(){
+  if(_pressureUnit==PSI)      return _getPressurePSI();
+  else if(_pressureUnit==HPA) return _getPressureHPA();
+  else if(_pressureUnit==ATM) return _getPressureATM();
 }
 
-float MPRLS::getPressurePSI(void){
-  uint32_t raw_psi = getRawPressure();
+float MPRLS::getPressure(unit pUnit){
+  if(pUnit==PSI)      return _getPressurePSI();
+  else if(pUnit==HPA) return _getPressureHPA();
+  else if(pUnit==ATM) return _getPressureATM();
+}
+
+float MPRLS::_getPressureHPA(void){
+  return _getPressurePSI() * 68.947572932;
+}
+
+float MPRLS::_getPressurePSI(void){
+  uint32_t raw_psi = _getRawPressure();
   if (raw_psi == 0xFFFFFFFF) return NAN;
 
   //See Derivation in the google Docs file: FlowIO/PressureMPRLS + API
@@ -75,6 +91,6 @@ float MPRLS::getPressurePSI(void){
   return psi;
 }
 
-float MPRLS::getPressureATM(void){
-  return getPressurePSI() * 0.0680459639;
+float MPRLS::_getPressureATM(void){
+  return _getPressurePSI() * 0.0680459639;
 }
