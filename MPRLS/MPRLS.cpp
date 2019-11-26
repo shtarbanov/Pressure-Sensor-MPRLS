@@ -6,7 +6,7 @@
 MPRLS::MPRLS(){
 }
 
-bool MPRLS::begin(){
+bool MPRLS::activateSensor(){
   _i2c = &Wire; //_i2c is a pointer that points to &Wire.
   _i2c->begin();
   delay(10); // startup timing

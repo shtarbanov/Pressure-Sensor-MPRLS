@@ -1,5 +1,5 @@
 MPRLS	KEYWORD1
-begin			KEYWORD2
+activateSensor	KEYWORD2
 setPressureUnit	KEYWORD2
 getStatus		KEYWORD2
 getPressure		KEYWORD2

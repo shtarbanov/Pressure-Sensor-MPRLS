@@ -26,7 +26,7 @@ class MPRLS {
     MPRLS();
 
     //Methods
-    bool    begin(); //twoWire is a pointer that points to the address of Wire.
+    bool    activateSensor(); //twoWire is a pointer that points to the address of Wire.
     void    setPressureUnit(unit pUnit);
     uint8_t getStatus(void);
     float   getPressure();
