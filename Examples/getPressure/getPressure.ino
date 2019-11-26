@@ -5,7 +5,7 @@ MPRLS mpr = MPRLS();
 
 void setup() {
   Serial.begin(115200);
-  if (mpr.begin()==false){
+  if (mpr.activateSensor()==false){
     Serial.println("Sensor not found.");
     while(1) delay(10);
   }
