@@ -18,6 +18,9 @@ void loop(){
     if (error == 0){
       Serial.print("I2C device found at address: ");
       Serial.print(address);
+      Serial.print(", (0x");
+      Serial.print(address,HEX);
+      Serial.println(")");
     }   
   }
   Serial.println("\nDone");
