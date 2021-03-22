@@ -3,10 +3,11 @@ MPRLS	KEYWORD1
 Unit	KEYWORD1
 
 ######### Methods and Functions #########----KEYWORD2
-activateSensor	KEYWORD2
+initSensor	KEYWORD2
 setPressureUnit	KEYWORD2
 getPressure	KEYWORD2
 requestPressure	KEYWORD2
+readError	KEYWORD2
 
 ############### Constants ###############----LITERAL1
 PSI	LITERAL1

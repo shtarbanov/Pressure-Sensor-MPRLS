@@ -19,12 +19,12 @@ class MPRLS {
     MPRLS();
 
     //Methods
-    bool    activateSensor(); //twoWire is a pointer that points to the address of Wire.
+    bool initSensor(); //twoWire is a pointer that points to the address of Wire.
     void requestPressure();
   	void setPressureUnit(Unit pUnit); //default is PSI.
   	float getPressure();
   	float getPressure(Unit pUnit);
-
+		uint8_t readError();
     //Literals
   	float pressure_mbar=-1; //Pressure returned in mbar.
   	float pressure_psi=-1;

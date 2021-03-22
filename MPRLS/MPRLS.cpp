@@ -11,7 +11,7 @@
 //constructor
 MPRLS::MPRLS(){
 }
-bool MPRLS::activateSensor(){
+bool MPRLS::initSensor(){
   _i2c = &Wire; //_i2c is a pointer that points to Wire.
   _i2c->begin();
   delay(10); // startup timing
@@ -118,4 +118,7 @@ float MPRLS::getPressure(Unit pUnit){
 
 float MPRLS::getPressure(){
   return getPressure(_pressureUnit);
+}
+uint8_t MPRLS::readError(){
+	return _errorCode;
 }
