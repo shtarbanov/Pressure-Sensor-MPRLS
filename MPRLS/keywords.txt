@@ -1,0 +1,16 @@
+############### Datatypes ###############----KEYWORD1
+MPRLS	KEYWORD1
+Unit	KEYWORD1
+
+######### Methods and Functions #########----KEYWORD2
+activateSensor	KEYWORD2
+setPressureUnit	KEYWORD2
+getPressure	KEYWORD2
+requestPressure	KEYWORD2
+
+############### Constants ###############----LITERAL1
+PSI	LITERAL1
+ATM	LITERAL1
+KPA	LITERAL1
+PA	LITERAL1
+MBAR	LITERAL1
