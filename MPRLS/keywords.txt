@@ -1,8 +1,0 @@
-MPRLS	KEYWORD1
-activateSensor	KEYWORD2
-setPressureUnit	KEYWORD2
-getStatus		KEYWORD2
-getPressure		KEYWORD2
-HPA				KEYWORD4
-PSI				KEYWORD4
-ATM				KEYWORD4
